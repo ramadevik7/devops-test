@@ -1,0 +1,17 @@
+---
+- hosts: MSR-test-Instance-1
+
+- name: Run using a project directory appach
+  hosts: localhost
+  connection: local
+  gather_facts: no
+  tasks:
+    - docker_service:
+        project_src: compose
+      register: output
+
+    - debug:
+        var: output
+
+
+

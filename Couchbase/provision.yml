@@ -1,0 +1,17 @@
+---
+- hosts: MSR-test-Instance-2
+
+- name: Run using a project directory couchbase
+  hosts: localhost
+  connection: local
+  gather_facts: no
+  tasks:
+    - docker_service:
+        project_src: ./
+      register: output
+
+    - debug:
+        var: output
+
+
+
